@@ -1,0 +1,102 @@
+
+body {
+    background-color: rgb(126, 90, 180);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+p {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div {
+    display: grid;
+    background-image: url("https://cdn.dribbble.com/users/2534580/screenshots/7147954/media/ffa3c2b80f816f8825cbc6405d0982be.jpg?resize=400x0");
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+    grid-template-areas:
+        "a1 a2 a3 a4 a5 a6"
+        "b1 b2 b3 b4 b5 b6"
+        "c1 c2 c3 c4 c5 c6"
+        "d1 d2 d3 d4 d5 d6"
+        "e1 e2 e3 e4 e5 e6"
+        "f1 f2 f3 f4 f5 f6";
+    z-index: 1;
+}
+
+#cathead {
+    display: grid;
+    grid-area: a3;
+    align-self: end;
+    justify-self: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#catback {
+    display: grid;
+    grid-area: b2;
+    justify-self: end;
+    align-self: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#catbelly {
+    display: grid;
+    grid-area: c3;
+    justify-self: start;
+    align-self: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#banana {
+    display: grid;
+    grid-area: e3;
+    justify-self: center;
+    align-self: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#restart {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: none;
+    grid-area: b5;
+    justify-self: center;
+    align-self: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    z-index: 3;
+    cursor: pointer;
+}
+
+#commentary {
+    text-align: center;
+}
+

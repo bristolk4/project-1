@@ -1,3 +1,5 @@
+// =====================CONSTANTS======================
+
 const catHead = document.querySelector('#cathead');
 const catBack = document.querySelector('#catback');
 const catBelly = document.querySelector('#catbelly');
@@ -7,16 +9,43 @@ const restart = document.querySelector('#restart');
 const allButtons = document.querySelectorAll('.button')
 const pointsDisplay = document.querySelector('#points');
 const commentaryDisplay = document.querySelector('#commentary')
+const timerDisplay = document.querySelector('#timer'); 
 
 let points = 0
+let timeLeft = 30; // game duration in seconds
+let timerInterval;
 
-// document.addEventListener('pageload', function() {
-//     document.querySelector('#restart').style.display = "none";
-// });
+// =====================FUNCTIONS========================
 
+function startTimer() { // had to ask chatGPT about timer stuff, but I understand it
+    timerDisplay.textContent = `${timeLeft}s`;
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = `${timeLeft}s`;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval); // stops timer
+            endGame(false); // end game if time runs out without winning
+            commentaryDisplay.textContent = `Time's up! The cat is unsatisfied.`;
+        }
+    }, 1000); // 1000 represents the interval in milliseconds for how often setInterval should run.
+              // so "run setInterval every 1 second"
+}
 
-function win() { // had to refer to chatGPT for part of this one :|
-    if (points >= 500) {
+function endGame(hasWon) {
+    allButtons.forEach((button) => {
+        button.style.display = "none";
+    });
+    restart.style.display = "grid"; 
+    if (hasWon === true) {
+        commentaryDisplay.textContent = 'You have sufficiently pet the cat, you WIN!'        
+    } else {
+        commentaryDisplay.textContent = `Time's up! The cat is unsatisfied.`
+    }
+}
+
+function win() { // had to google for part of this...
+    if (points >= 400) {
+        clearInterval(timerInterval); // stops timer
         commentaryDisplay.textContent = 'You have sufficiently pet the cat you WIN';
         allButtons.forEach((button) => {  // hides all buttons and ends the game
             button.style.display = "none";
@@ -26,11 +55,11 @@ function win() { // had to refer to chatGPT for part of this one :|
 }
 
 banana.addEventListener('click', () => {
-    points = points - 100
     commentaryDisplay.textContent = `The name of the game is not "Pet That Banana."\n
     How could you be so STUPID\n
     get out of my SIGHT you DUMB IDIOT`;
     pointsDisplay.textContent = "NO POINTS You LOSE";
+    clearInterval(timerInterval);
     allButtons.forEach((button) => {
         button.style.display = "none";
      })
@@ -52,7 +81,7 @@ catBack.addEventListener('click', () => {
 });
 
 catBelly.addEventListener('click', () => {
-    if (points >= 30) {
+    if (points >= 40) {
         commentaryDisplay.textContent = 'Wow, the cat must really like you for it to let you pet its belly!'
         points = points + 50; // if you have over 30 points, you get another 50 and the commentary display changes
     } else {
@@ -63,3 +92,6 @@ catBelly.addEventListener('click', () => {
     win();
 });
 
+document.addEventListener('DOMContentLoaded', () => { // starts timer on page load
+    startTimer();
+});

@@ -2,6 +2,7 @@
 body {
     background-color: rgb(126, 90, 180);
     display: flex;
+    text-align:center;
     flex-direction: column;
     align-items: center;
 }
@@ -31,6 +32,11 @@ div {
     z-index: 1;
 }
 
+.button:hover {
+    background-color: rgb(126, 90, 180);
+    cursor: pointer;
+}
+
 #cathead {
     display: grid;
     grid-area: a3;
@@ -41,7 +47,6 @@ div {
     border-radius: 50%;
     border: 1px solid black;
     z-index: 2;
-    cursor: pointer;
 }
 
 #catback {
@@ -54,7 +59,6 @@ div {
     border-radius: 50%;
     border: 1px solid black;
     z-index: 2;
-    cursor: pointer;
 }
 
 #catbelly {
@@ -67,7 +71,6 @@ div {
     border-radius: 50%;
     border: 1px solid black;
     z-index: 2;
-    cursor: pointer;
 }
 
 #banana {
@@ -80,7 +83,6 @@ div {
     border-radius: 50%;
     border: 1px solid black;
     z-index: 2;
-    cursor: pointer;
 }
 
 #restart {
@@ -100,3 +102,19 @@ div {
     text-align: center;
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+    body {
+        background-color: rgb(126, 90, 180);
+        display: flex;
+        text-align:center;
+        flex-direction: column;
+        align-items: center;            
+    }
+
+    #petthatcat {
+        display: flex;
+        align-items: center;
+        width: 50px;
+    }
+}
+  

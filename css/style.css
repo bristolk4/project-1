@@ -7,21 +7,40 @@ body {
     align-items: center;
 }
 
+h1 {
+    border: 5px solid black;
+    background-color: rgb(95, 64, 142);
+    margin-bottom: 0;
+    border-radius: 50px;
+    padding-bottom: 0;
+}
+
 h2 {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: underline;
 }
 
+
 p {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-div {
+#circle {
+    display: grid;
+    z-index: 0;
+    border: 10px solid black;
+    padding: 20px;
+    border-radius: 100%;
+    border-style: double;
+}
+
+#poop {
     display: grid;
     background-image: url("https://cdn.dribbble.com/users/2534580/screenshots/7147954/media/ffa3c2b80f816f8825cbc6405d0982be.jpg?resize=400x0");
     height: 300px;
     width: 400px;
     border-radius: 20px;
+    border: 2px solid black;
     grid-template-areas:
         "a1 a2 a3 a4 a5 a6"
         "b1 b2 b3 b4 b5 b6"
@@ -102,7 +121,15 @@ div {
     text-align: center;
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+#bottomborder {
+    border: 5px solid black;
+    background-color: rgb(95, 64, 142);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* @media (min-width: 350) and (max-width: 1000) {
     body {
         background-color: rgb(126, 90, 180);
         display: flex;
@@ -111,10 +138,18 @@ div {
         align-items: center;            
     }
 
-    #petthatcat {
-        display: flex;
-        align-items: center;
-        width: 50px;
+    h1 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-bottom: 0;
+        border-radius: 50px;
+        padding-bottom: 0;    
     }
-}
-  
+    
+    h2 {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-decoration: underline;
+    }
+
+}   */

@@ -12,7 +12,7 @@ const commentaryDisplay = document.querySelector('#commentary')
 const timerDisplay = document.querySelector('#timer'); 
 
 let points = 0
-let timeLeft = 30; // game duration in seconds
+let timeLeft = 60; // game duration in seconds
 let timerInterval;
 
 // =====================FUNCTIONS========================
